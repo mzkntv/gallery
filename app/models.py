@@ -7,7 +7,7 @@ User = get_user_model()
 
 class Picture(models.Model):
     title = models.CharField(verbose_name='Наименование', max_length=255)
-    image = models.ImageField(verbose_name='Изображение')
+    image = models.ImageField(verbose_name='Изображение', upload_to='images')
     owner = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True, related_name='pictures')
 
     def __str__(self) -> str:
